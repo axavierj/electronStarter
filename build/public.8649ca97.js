@@ -36196,7 +36196,6 @@ var createFile = function createFile(content) {
 
 var saveAndCreateFileContent = function saveAndCreateFileContent(content) {
   var storedData = JSON.parse(localStorage.getItem("users"));
-  console.log(storedData, content);
   storedData.push(content);
   localStorage.setItem("users", JSON.stringify(storedData));
   return storedData;
@@ -36329,13 +36328,16 @@ var fs = window.require("fs");
 var App = function App() {
   var users = [];
   (0, _react.useEffect)(function () {
+    localStorage.clear();
     fs.readFile("C:/frontEndSample/test.json", function (err, data) {
       if (data) {
-        users.push(JSON.parse(data));
+        users = JSON.parse(data);
+        localStorage.setItem("users", JSON.stringify(users));
+      } else {
+        localStorage.setItem("users", JSON.stringify([]));
       }
     });
-    localStorage.setItem("users", JSON.stringify(users));
-  }, []);
+  }, [fs]);
   return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("div", {
     className: "container container-height"
   }, _react.default.createElement(_Form.default, null)));
@@ -36466,7 +36468,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60815" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61936" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

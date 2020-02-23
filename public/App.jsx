@@ -7,13 +7,16 @@ import MainForm from "./components/Form";
 const App = () => {
   let users = [];
   useEffect(() => {
+    localStorage.clear();
     fs.readFile("C:/frontEndSample/test.json", (err, data) => {
       if (data) {
-        users.push(JSON.parse(data));
+        users = JSON.parse(data);
+        localStorage.setItem("users", JSON.stringify(users));
+      } else {
+        localStorage.setItem("users", JSON.stringify([]));
       }
     });
-    localStorage.setItem("users", JSON.stringify(users));
-  }, []);
+  }, [fs]);
   return (
     <>
       <div className="container container-height">

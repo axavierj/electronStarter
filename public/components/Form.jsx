@@ -12,7 +12,6 @@ const createFile = content => {
 
 const saveAndCreateFileContent = content => {
   let storedData = JSON.parse(localStorage.getItem("users"));
-  console.log(storedData, content);
   storedData.push(content);
   localStorage.setItem("users", JSON.stringify(storedData));
   return storedData;

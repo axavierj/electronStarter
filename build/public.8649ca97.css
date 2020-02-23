@@ -63,5 +63,23 @@ body {
   place-items: center;
 }
 
+.custom-control-label::before {
+  background-color: transparent;
+  border: 2px solid #26a7df;
+}
+
+.custom-checkbox .custom-control-label::before {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #26a7df;
+  border-color: #26a7df;
+}
+
 
 /*# sourceMappingURL=/public.8649ca97.css.map */

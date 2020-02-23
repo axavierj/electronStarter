@@ -5,7 +5,9 @@ const path = require("path");
 const isDev = require("electron-is-dev");
 
 let mainWindow;
-require("electron-reload")(__dirname);
+if (isDev) {
+  require("electron-reload")(__dirname);
+}
 
 const createWindow = () => {
   mainWindow = new BrowserWindow({
