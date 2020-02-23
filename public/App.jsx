@@ -1,21 +1,26 @@
-import React from 'react'
-import NavBar from 'react-bootstrap/Navbar'
+import React, { useEffect } from "react";
+import NavBar from "react-bootstrap/Navbar";
+const fs = window.require("fs");
 
-import MainForm from './components/Form'
+import MainForm from "./components/Form";
 
 const App = () => {
-    return ( 
-        <>
-        <NavBar bg="primary" variant="dark">
-            <NavBar.Brand href="#">App</NavBar.Brand>
-        </NavBar>
-        <div className="container">
-            <main className="card m-1 p-2">
-                <MainForm />
-            </main>
-        </div>
-        </>
-     )
-}
- 
-export default App
+  let users = [];
+  useEffect(() => {
+    fs.readFile("C:/frontEndSample/test.json", (err, data) => {
+      if (data) {
+        users.push(JSON.parse(data));
+      }
+    });
+    localStorage.setItem("users", JSON.stringify(users));
+  }, []);
+  return (
+    <>
+      <div className="container container-height">
+        <MainForm />
+      </div>
+    </>
+  );
+};
+
+export default App;
