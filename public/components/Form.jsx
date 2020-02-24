@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 const fs = window.require("fs");
 
 const createFile = content => {
-  fs.writeFile("C:/frontEndSample/test.json", JSON.stringify(content), () =>
+  fs.writeFile("C:/frontEndSample/sample.json", JSON.stringify(content), () =>
     window.alert("file saved")
   );
 };
