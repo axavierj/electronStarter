@@ -1,0 +1,75 @@
+body {
+  height: 100vh;
+  background-image: url("./bg.png");
+}
+.app {
+  height: 100%;
+}
+
+.container-height {
+  height: 100%;
+}
+
+.card-height {
+  height: 80%;
+}
+
+.custom-bg {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.rmi {
+  text-transform: uppercase;
+  color: #26a7df;
+  text-shadow: 2px 2px 2.5px black;
+}
+
+.input {
+  background-color: black;
+  color: white;
+}
+
+.input:focus {
+  background-color: black;
+}
+
+.input::placeholder {
+  text-align: center;
+  color: #26a7df;
+}
+
+.custom-checkbox label {
+  color: #26a7df;
+  text-shadow: 2px 2px 2.5px black;
+}
+
+.custom-text {
+  color: #26a7df;
+}
+
+.custom-bg_button {
+  background-color: #26a7df;
+}
+
+.bgrid {
+  display: grid;
+  place-items: center;
+}
+
+.custom-control-label::before {
+  background-color: transparent;
+  border: 2px solid #26a7df;
+}
+
+.custom-checkbox .custom-control-label::before {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #26a7df;
+  border-color: #26a7df;
+}

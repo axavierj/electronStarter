@@ -1,17 +1,18 @@
 const electron = require("electron");
-const { app, BrowserWindow, ipcMain } = electron;
+const { app, BrowserWindow } = electron;
 
 const path = require("path");
-const fs = require("fs");
 const isDev = require("electron-is-dev");
 
 let mainWindow;
-require("electron-reload")(__dirname);
+if (isDev) {
+  require("electron-reload")(__dirname);
+}
 
 const createWindow = () => {
   mainWindow = new BrowserWindow({
-    width: 900,
-    height: 680,
+    width: 912,
+    height: 1368,
     webPreferences: {
       nodeIntegration: true
     }
@@ -24,10 +25,6 @@ const createWindow = () => {
   );
   mainWindow.on("closed", () => (mainWindow = null));
 };
-
-ipcMain.on("test", (event, data) => {
-  console.log(data);
-});
 
 app.on("ready", createWindow);
 
