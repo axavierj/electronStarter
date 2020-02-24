@@ -7,10 +7,12 @@
   "scripts": {
     "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:1234 && electron . \"",
     "test": "jest",
-    "build": "npm run react-build && npm run electron-build",
+    "clean": "rm -rf ./build ./.cache ./dist",
+    "build": "npm run clean && npm run react-build && npm run electron-build",
     "react-start": "parcel index.html --out-dir build",
     "react-build": "parcel build index.html --out-dir build --public-url ./",
-    "electron-build": "electron-builder"
+    "electron-build": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "author": "alexander jimenez",
   "license": "ISC",
@@ -25,6 +27,7 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "electron-is-dev": "^1.1.0",
+    "futura-font": "^1.0.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",

@@ -128,7 +128,7 @@ const MainForm = () => {
           <Button
             type="reset"
             size="sm"
-            className="px-5 bg-dark custom-text border-0"
+            className="px-5 bg-dark custom-text border-0 canex"
           >
             Cancel
           </Button>

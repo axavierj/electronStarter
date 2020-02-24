@@ -1,5 +1,5 @@
 const electron = require("electron");
-const { app, BrowserWindow, Menu } = electron;
+const { app, BrowserWindow } = electron;
 
 const path = require("path");
 const isDev = require("electron-is-dev");
@@ -17,7 +17,7 @@ const createWindow = () => {
       nodeIntegration: true
     }
   });
-  Menu.setApplicationMenu(false)
+  mainWindow.setMenu(null)
   mainWindow.loadURL(
     isDev
       ? "http://localhost:1234"

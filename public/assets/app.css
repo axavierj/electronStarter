@@ -1,6 +1,22 @@
+@font-face{
+  font-family: Futura-Medium;
+  src: url('./Futura-Medium.otf');
+}
+
+@font-face{
+  font-family: Housemovment-Runway;
+  src:url('HouseMovements-Runway.otf');
+}
+
 body {
   height: 100vh;
   background-image: url("./bg.png");
+  font-family: 'Futura-Medium', Arial, Helvetica, sans-serif;
+}
+
+.canex{
+  font-family:'Housemovment-Runway', Helvetica ;
+  font-size: 5pt;
 }
 .app {
   height: 100%;
